@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~font-awesome/css/font-awesome.css";
+p{color:blueviolet;
+}
+
+
+.img-responsive , .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+	width:100%;background-repeat:no-repeat;height:740px;max-width:100% !important;
+}
+.add-butt{
+	width: 100%;
+	display: block;
+}
+
+
+
+
+.btn{
+	border-radius: 0px;
+}
+.btn-secondary{
+	background-color: #627a66;
+	border-color: #627a66;
+}
+
+.fixed{
+	position:fixed;z-index:5000 ;top: 0px;
+}
+.btn-secondary.focus, .btn-secondary:focus{
+	box-shadow:none;outline: none
+}
+.carousel-item img{
+	max-height: 670px;
+}
+

@@ -1,0 +1,17 @@
+.fg{
+    color:red;
+    font-size: 12em;
+}
+.div1{
+    background-color: aquamarine;
+}
+.active{
+    background-color: red;
+}
+.age{
+    border: 4px solid darkgoldenrod;
+}
+.yel{
+    color:gold;
+    box-shadow: 5px;
+}
