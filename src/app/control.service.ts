@@ -14,6 +14,7 @@ import {  BehaviorSubject } from 'rxjs';
 import { inject } from '@angular/core/testing';
 import { promise } from 'protractor';
 import { resolve, reject } from 'q';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,12 @@ public do:Array<pl>;
 pp:object|JSON[];
 myData: BehaviorSubject<any> = new BehaviorSubject<any>(0);
   constructor(public http:HttpClient) {
-    this.getData();
+  
+  
+  
+
+  
+    //  this.getData();
     this.rr();
    console.log(this.myData.subscribe());
     //End of get fun
@@ -44,11 +50,15 @@ console.log("bhere2 "+this.b1);
   ngOnInit() {
     
   }
+
+
+
+
   async getData() {
     return await new Promise(resolve => {
     this.http.get('http://localhost:3000').subscribe(res => {
     resolve((res));
-    this.pp[1]=JSON.stringify(res);
+    return JSON.stringify(res);
     console.log("222"+JSON.stringify(res)); //check if there is data response 
     },
     err => {

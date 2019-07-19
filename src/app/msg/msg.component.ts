@@ -6,7 +6,7 @@ import { promise } from 'protractor';
 import{Observable} from 'rxjs';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import{map} from 'rxjs/operators';
 @Component({
   selector: 'app-msg',
   templateUrl: './msg.component.html',
@@ -14,10 +14,16 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 })
 export class MsgComponent implements OnInit {
  ind:number=0;
- public doub=[];
+  doub=[1,2,3,4,5];
  roq:Promise<any>;
+ b1;
+ b2:any=13;
+
   constructor(private cont:ControlService,private http:HttpClient) { 
-this.getmsg();   
+   
+    this.b1=http.get<any>("http://localhost:3000").pipe(map(data=>{data}));
+  console.log("bb "+this.b1);
+  
   }
 
   ngOnInit() {
